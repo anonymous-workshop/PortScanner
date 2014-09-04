@@ -6,7 +6,7 @@ import socket
 
 hostname = raw_input('Enter Host to scan: ')
 
-for i in range(1, 256):
+for i in range(1, 9999):
 
     s = socket.socket()
     s.settimeout(.05)
@@ -15,7 +15,7 @@ for i in range(1, 256):
     response = s.connect_ex((ip,i))
 
     if response:
-        print ("%d\tclose" %i)
+        continue
     else:
         print ("%d\topen" %i)
 
